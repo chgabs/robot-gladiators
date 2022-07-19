@@ -118,7 +118,7 @@ var startGame = function () {
   endGame();
 };
 var endGame = function () {
-    window.alert("The game has now ended. Let's see how you did!");
+  window.alert("The game has now ended. Let's see how you did!");
   // if player is still alive, player wins!
   if (playerInfo.health > 0) {
     window.alert(
@@ -163,9 +163,17 @@ var shop = function () {
       break;
   }
 };
+var getPlayerName = function () {
+  var name = "";
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+  console.log("Your robot's name is " + name);
+  return name;
+};
 // player info
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
